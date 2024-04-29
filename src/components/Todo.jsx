@@ -1,7 +1,16 @@
 import React from "react";
-
-const Todo = () => {
-  return <div></div>;
+import { AiFillEdit } from "react-icons/ai";
+// import { BsFillTrash } from "react-icons/bs";
+const Todo = ({ key, task }) => {
+  return (
+    <div className="flex justify-between items-center bg-violet-800 text-white py-3 px-4 rounded-md mb-1 cursor-pointer">
+      <p className="font-primary">{task.task}</p>
+      <div className="flex items-center gap-x-4">
+        <AiFillEdit className="text-xl" />
+        {/* <BsFillTrash className="text-xl" /> */}
+      </div>
+    </div>
+  );
 };
 
 export default Todo;
