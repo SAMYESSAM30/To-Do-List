@@ -12,7 +12,7 @@ const Form = ({ createTodo }) => {
       <input
         type="text"
         placeholder="What task do you have today?"
-        className="outline-none bg-transparent border border-gray-500  p-4 w-[300px] text-white mb-8 rounded placeholder:text-gray-300"
+        className="outline-none bg-transparent border border-gray-500  p-4 w-[300px]   text-white mb-8 rounded placeholder:text-gray-300"
         onChange={(e) => setValue(e.target.value)}
         value={value}
       />

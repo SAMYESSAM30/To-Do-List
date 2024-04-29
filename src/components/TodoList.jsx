@@ -21,17 +21,28 @@ const TodoList = () => {
       )
     );
   };
+  const editTask = (task, id) => {
+    setTodoValue(
+      todoValue.map((todo) =>
+        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+      )
+    );
+  };
   return (
-    <div className="container bg-gray-700 mt-20 p-8 rounded-md ">
+    <div className="container bg-gray-700 mt-20 m-auto p-8 rounded-md ">
       <Form createTodo={createTodo} />
-      {todoValue.map((todo, idx) => (
-        <Todo
-          key={idx}
-          task={todo}
-          deleteTodo={deleteTodo}
-          editTodo={editTodo}
-        />
-      ))}
+      {todoValue.map((todo, idx) =>
+        todo.isEditing ? (
+          <Edit key={idx} editTodo={editTask} task={todo} />
+        ) : (
+          <Todo
+            key={idx}
+            task={todo}
+            deleteTodo={deleteTodo}
+            editTodo={editTodo}
+          />
+        )
+      )}
     </div>
   );
 };
